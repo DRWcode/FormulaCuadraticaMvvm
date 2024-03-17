@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FormulaCuadraticaMvvm.Views.MainPage"
+             xmlns:vm="clr-namespace:FormulaCuadraticaMvvm.ViewModels"
+             Title="Fórmula Cuadrática">
+    <ContentPage.BindingContext>
+        <vm:FormulaCuadraticaViewModel/>
+    </ContentPage.BindingContext>
+    <StackLayout>
+        <StackLayout Margin="0,10">
+            <Label Text="Valor A"/>
+            <Entry x:Name="aEntry" Placeholder="Ingrese Valor A" Text="{Binding A, Mode=TwoWay}"/>
+        </StackLayout>
+        <StackLayout Margin="0,10">
+            <Label Text="Valor B"/>
+            <Entry x:Name="bEntry" Placeholder="Ingrese Valor B" Text="{Binding B, Mode=TwoWay}"/>
+        </StackLayout>
+        <StackLayout Margin="0,10">
+            <Label Text="Valor C"/>
+            <Entry x:Name="cEntry" Placeholder="Ingrese Valor C" Text="{Binding C, Mode=TwoWay}"/>
+        </StackLayout>
+        <Button Text="Calcular" Command="{Binding CalcularCommand}" Margin="0,20,0,0"/>
+
+        <StackLayout Margin="0,10">
+            <Label Text="Resultado"/>
+            <Label Text="{Binding Resultado}" Margin="0,5"/>
+        </StackLayout>
+
+        <Button Text="Limpiar" Command="{Binding LimpiarCommand}" Margin="0,20,0,0"/>
+    </StackLayout>
+</ContentPage>
